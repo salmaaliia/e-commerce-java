@@ -47,7 +47,7 @@ public static void checkout(Cart cart, double balance, ShippingService shippingC
 
                 String pWeight = productWeight >= 1000.0 ? String.format("%.2f kg", productWeight / 1000.0) : String.format("%.0f g", productWeight);
 
-                System.out.printf("%-4sx %-15s %s%n", cartItem.getAmount(), product.getName(), pWeight);
+                System.out.printf("%sx %-15s %s%n", cartItem.getAmount(), product.getName(), pWeight);
             }
         }
         String totalWeightString = totalShippingWeight >= 1000.0 ? String.format("%.2f kg", totalShippingWeight / 1000.0) : String.format("%.0f g", totalShippingWeight);
@@ -58,7 +58,7 @@ public static void checkout(Cart cart, double balance, ShippingService shippingC
         for (CartItem cartItem : cart.getCartItems()) {
             Product product = cartItem.getProduct();
             double price = cartItem.getAmount() * product.getPrice();
-            System.out.printf("%-4sx %-15s %.2f%n", cartItem.getAmount(), product.getName(), price);
+            System.out.printf("%sx %-15s %.2f%n", cartItem.getAmount(), product.getName(), price);
             
         }
         System.out.println("----------------------");
